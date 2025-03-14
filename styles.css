@@ -9,7 +9,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: lightskyblue;
+    background-color: rgb(6, 133, 252);
     height: 10vh;
 }
 
@@ -34,4 +34,8 @@ button {
     &:hover {
         background-color: white;
     }
+}
+
+h3 {
+    color: rgb(6, 133, 252);;
 }
