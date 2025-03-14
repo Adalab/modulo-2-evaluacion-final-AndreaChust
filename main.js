@@ -17,12 +17,20 @@ const handleSearch = (ev) => {
             console.log(data);
             list.innerHTML = "";
             for (const anime of animes) {
-                const image = anime.images.jpg.image_url; //accedo a la url de las imagenes
+                let image = anime.images.jpg.image_url; //accedo a la url de las imagenes
                 const title = anime.title;
-                list.innerHTML += `<li> 
-                <img src="${image}" alt="Imagen del anime ${animes}">
+                const withoutImage = "https://cdn.myanimelist.net/img/sp/icon/apple-touch-icon-256.png";
+                const placeHolder = "https://media.istockphoto.com/id/1409329028/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=_zOuJu755g2eEUioiOUdz_mHKJQJn-tDgIAhQzyeKUQ=";
+                if (image === withoutImage) {
+                    image = placeHolder
+                }
+                list.innerHTML += `<li class="js-list-anime"> 
+                <img src="${image}" alt="Imagen del anime ${title}">
                 <h3>${title}</h3>
                 </li>`
+
+                const allAnime = document.querySelectorAll(".js-list-anime");
+                
             }
 
         })
