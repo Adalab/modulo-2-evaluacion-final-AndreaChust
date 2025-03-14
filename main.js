@@ -5,6 +5,9 @@ const button = document.querySelector(".js-btn");
 const reset = document.querySelector(".js-reset");
 const list = document.querySelector(".js-list");
 
+let animeList = []; //Creo un array vacío que luego llenare con los datos del servidor, linea 20.
+let animeFavoritesList = [];
+
 
 
 const handleSearch = (ev) => {
@@ -14,7 +17,7 @@ const handleSearch = (ev) => {
         .then(response => response.json())
         .then(data => {
             const animes = data.data; //accedo a la propiedad de mi objeto
-            console.log(data);
+            animeList = animes; //Lleno mi array vacío
             list.innerHTML = "";
             for (const anime of animes) {
                 let image = anime.images.jpg.image_url; //accedo a la url de las imagenes
@@ -24,13 +27,15 @@ const handleSearch = (ev) => {
                 if (image === withoutImage) {
                     image = placeHolder
                 }
-                list.innerHTML += `<li class="js-list-anime"> 
+                list.innerHTML += `<li class="js-list-anime" id=${anime.mal_id}> 
                 <img src="${image}" alt="Imagen del anime ${title}">
                 <h3>${title}</h3>
                 </li>`
 
-                const allAnime = document.querySelectorAll(".js-list-anime");
-                
+                const allCartoon = document.querySelectorAll(".js-list-anime"); //Selecciono todas las li y como devuelve un array tengo que hacer un bucle for, porque no puedo pintar directamente en mi HTML un array, a continuacion el bucle:
+                for(const cartoon of allCartoon) {
+                    cartoon.addEventListener("click", handleAddFavorite);
+                }
             }
 
         })
@@ -38,3 +43,11 @@ const handleSearch = (ev) => {
 
 
 button.addEventListener("click", handleSearch);
+
+function handleAddFavorite(ev){
+    const idCartoon = ev.currentTarget.id;
+    const animeSelected = animeList.find((anime) => {
+        return anime.mal_id === idCartoon;
+    })
+    
+}
