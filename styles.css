@@ -1,4 +1,37 @@
 main {
     display: flex;
     justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+header {
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightskyblue;
+    height: 10vh;
+}
+
+.container {
+    margin: 20px;
+}
+
+.container1 {
+    border: solid;
+}
+
+.container2 {
+    border: solid;
+}
+
+.searchAnime {
+    border: solid rgb(6, 133, 252);
+}
+
+button {
+    background-color: rgb(6, 133, 252);
+    &:hover {
+        background-color: white;
+    }
 }
