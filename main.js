@@ -15,6 +15,7 @@ const handleSearch = (ev) => {
         .then(data => {
             const animes = data.data; //accedo a la propiedad de mi objeto
             console.log(data);
+            list.innerHTML = "";
             for (const anime of animes) {
                 const image = anime.images.jpg.image_url; //accedo a la url de las imagenes
                 const title = anime.title;
