@@ -59,8 +59,8 @@ const handleSearch = (ev) => {
             renderAnimes(animes); //Invoco la funcion donde he guardado mis instrucciones para pintar la li en HTML
         })
 }
-animeFavoritesList = JSON.parse(localStorage.getItem("favorites")) || []; // Como en localStorage los datos se guardan en strings necesiton hacer un parse, luego si hay favoritos en el localStorage los cojo, si no, pinto un array vacío porque no hay favoritos guardados en el localStorage.
-renderFavorites(); // Pinto mis favoritos al cargar la página
+animeFavoritesList = JSON.parse(localStorage.getItem("favorites")) || []; // Como en localStorage los datos se guardan en strings necesito hacer un parse, luego si hay favoritos en el localStorage los cojo, si no, pinto un array vacío porque no hay favoritos guardados en el localStorage.
+renderFavorites(); // Pinto mis favoritos al cargar la página.
 
 
 button.addEventListener("click", handleSearch);
@@ -77,10 +77,20 @@ function handleAddFavorite(ev){
     }) 
     if (!findingAnime) {
         animeFavoritesList.push(animeSelected); //Meto los favoritos en un nuevo array pasando como parametro animeSelected.
-        localStorage.setItem("favorites", JSON.stringify(animeFavoritesList));
+        localStorage.setItem("favorites", JSON.stringify(animeFavoritesList)); //Almaceno en mi localStorage los favoritos.
     }
 
         renderFavorites(); //Invoco renderFavorites para que se añadan a favoritos
 
 }
 
+const handleReset = () => {
+    animeFavoritesList.splice(0, animeFavoritesList.length);
+    animeList.splice(0, animeList.length);
+    localStorage.clear(); //Borro el localStorage porque si recargo la página vuelven a aparecer los favoritos.
+    list.innerHTML = "";
+    favoriteAnime.innerHTML = "";
+    search.value = "";
+}
+
+reset.addEventListener("click", handleReset);
