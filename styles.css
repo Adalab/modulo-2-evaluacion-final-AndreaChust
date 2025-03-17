@@ -9,7 +9,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(6, 133, 252);
+    background-color: rgb(221, 124, 189);
     height: 10vh;
 }
 
@@ -26,16 +26,16 @@ header {
 }
 
 .searchAnime {
-    border: solid rgb(6, 133, 252);
+    border: solid rgb(221, 124, 189);
 }
 
 button {
-    background-color: rgb(6, 133, 252);
+    background-color: rgb(221, 124, 189);
     &:hover {
         background-color: white;
     }
 }
 
 h3 {
-    color: rgb(6, 133, 252);;
+    color: rgb(221, 124, 189);
 }
