@@ -6,6 +6,7 @@ const reset = document.querySelector(".js-reset");
 const list = document.querySelector(".js-list");
 const favoriteAnime = document.querySelector(".js-favorite-anime");
 
+
 let animeList = []; //Creo un array vacío que luego llenare con los datos del servidor, linea 20.
 let animeFavoritesList = [];
 
@@ -94,3 +95,4 @@ const handleReset = () => {
 }
 
 reset.addEventListener("click", handleReset);
+

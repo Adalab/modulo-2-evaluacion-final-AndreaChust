@@ -2,6 +2,7 @@ main {
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
+    padding: 50px;
 }
 
 header {
@@ -18,24 +19,61 @@ header {
 }
 
 .container1 {
-    border: solid;
+    border: solid lightyellow;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 50px;
+    padding: 20px;
 }
 
 .container2 {
-    border: solid;
+    border: solid rgb(221, 124, 189);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 50px;
+    padding: 20px;
 }
 
 .searchAnime {
     border: solid rgb(221, 124, 189);
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-top: 20px;
 }
 
 button {
     background-color: rgb(221, 124, 189);
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 70px;
     &:hover {
         background-color: white;
     }
 }
 
-h3 {
+.fav {
+    background-color: rgb(221, 124, 189);
+
+}
+
+.result {
+    background-color: lightyellow;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: lightyellow;
+}
+
+.list2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: rgb(221, 124, 189);
+    
 }
