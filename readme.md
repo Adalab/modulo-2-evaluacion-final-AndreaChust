@@ -4,7 +4,7 @@
 
 Hemos creado este buscador de animes para que no te pierdas ninguno, podrás guardarte todos los que quieras en la sección de favoritos y si dejan de serlo, podrás eliminarlos.
 
-El acceso a la página web es a través de esta URL: 
+El acceso a la página web es a través de esta URL: https://beta.adalab.es/modulo-2-evaluacion-final-AndreaChust/
 
 Esperamos que encontréis todos los animes que teneis en mente.
 
